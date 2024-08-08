@@ -38,7 +38,7 @@
             <TabControl.FocusVisualStyle>
                 <Style />
             </TabControl.FocusVisualStyle>
-            <TabItem Header="Клиент" x:Name="tabClient" MouseLeftButtonDown="selection_changed_MouseLeftButtonDown" Background="Pink" >
+            <TabItem Header="Лавка" x:Name="tabClient" MouseLeftButtonDown="selection_changed_MouseLeftButtonDown" Background="Pink" >
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="Images/cake.jpg"/>
@@ -83,7 +83,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Менеджер" Name="tabManager" Background="Pink">
+            <TabItem Header="Склад" Name="tabManager" Background="Pink">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="Images/cake.jpg"/>

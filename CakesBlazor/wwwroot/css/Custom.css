@@ -1,38 +1,49 @@
-﻿body {
-    background-color: #f5f5dc;
+﻿﻿﻿
+body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    height: 100vh;
-    background-image: url('../Images/background.jpg');
-    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/Images/background.jpg');
     background-position: center;
-    background-repeat: no-repeat;
 }
 
-.nav-tabs {
-    font-size: 1.25rem; /* Увеличенный шрифт */
-    margin-bottom: 20px;
-}
-
-    .nav-tabs .nav-item {
-        flex: 1;
-        text-align: center;
-    }
-
-    .nav-tabs .nav-link {
-        padding: 1rem 1.5rem;
-        border-radius: 10px;
-    }
-
-.tab-content {
-    flex: 1;
-    padding: 3rem;
+.container {
+    width: 80%;
+    height: 80%;
+    background-color: #fffaf0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
     overflow-y: auto;
 }
 
+.tabs .nav-tabs {
+    background-color: #8b4513;
+    border-radius: 5px;
+    font-size: 1.25rem;
+}
+
+.tabs .nav-link {
+    color: white;
+    border: none;
+    margin: 5px;
+}
+
+    .tabs .nav-link.active {
+        background-color: #a0522d; 
+    }
+
+.tab-content {
+    background-color: #fffaf0;
+    padding: 20px;
+    border: 1px solid #8b4513;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 h1, h4, h5 {
-    color: #8b4513;
+    color: #8b4513; 
 }
 
 .list-group-item {
