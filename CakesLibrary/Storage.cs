@@ -61,6 +61,17 @@ namespace CakesLibrary.Models
                 AddIngredients(ingredient);
             }
         }
+
+        public void RemoveIngredient(Ingredient ingredient)
+        {
+            var itemToRemove = _allIngredients.FirstOrDefault(i => i.Name == ingredient.Name && i.Quantity == ingredient.Quantity);
+            if (itemToRemove != null)
+            {
+                _allIngredients.Remove(itemToRemove);
+                SaveIngredients();
+            }
+        }
+
         public void VerifyIngredientsAvailability(Dictionary<string, int> neededIngredients)
         {
             

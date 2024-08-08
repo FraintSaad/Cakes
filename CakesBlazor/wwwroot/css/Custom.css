@@ -10,38 +10,27 @@ body {
     background-repeat: no-repeat;
 }
 
-.container {
-    width: 80%;
-    height: 80%;
-    background-color: #fffaf0;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    overflow-y: auto;
+.nav-tabs {
+    font-size: 1.25rem; /* Увеличенный шрифт */
+    margin-bottom: 20px;
 }
 
-.tabs .nav-tabs {
-    background-color: #8b4513;
-    border-radius: 5px;
-}
+    .nav-tabs .nav-item {
+        flex: 1;
+        text-align: center;
+    }
 
-.tabs .nav-link {
-    color: white;
-    border: none;
-    margin: 5px;
-}
-
-    .tabs .nav-link.active {
-        background-color: #a0522d;
+    .nav-tabs .nav-link {
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
     }
 
 .tab-content {
-    background-color: #fffaf0;
-    padding: 20px;
-    border: 1px solid #8b4513;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
 }
+
 
 h1, h4, h5 {
     color: #8b4513;

@@ -56,8 +56,13 @@
                     <div class="list-group">
                         @foreach (var ingredient in _storage.GetAllIngredients())
                         {
-                            <div class="list-group-item">@ingredient.Name - @ingredient.Quantity</div>
+                            <button class="list-group-item list-group-item-action @((selectedIngredient == ingredient ? "active" : ""))" @onclick="() => SelectIngredient(ingredient)">
+                                @ingredient.Name - @ingredient.Quantity
+                            </button>
                         }
+                    </div>
+                    <div class="delete-button">
+                        <button class="btn" type="button" @onclick="DeleteSelectedIngredient" disabled="@(selectedIngredient == null)">Удалить выбранный ингредиент</button>
                     </div>
                     <div class="mt-3">
                         <h5>Добавить ингредиент:</h5>
@@ -82,6 +87,7 @@
 
     private string msgBoxMessage = "";
     private string selectedRecipe;
+    private Ingredient selectedIngredient;
     private int _ingredientPrice;
     private int _ingredientQuantity;
     private string _ingredientName;
@@ -102,14 +108,15 @@
 
     private void AddIngredient()
     {
-        var ingredient = new Ingredient();
-        ingredient.Name = _ingredientName;
-        ingredient.Cost = Convert.ToDecimal(_ingredientPrice);
-        ingredient.Quantity = Convert.ToInt32(_ingredientQuantity);
+        var ingredient = new Ingredient
+            {
+                Name = _ingredientName,
+                Cost = Convert.ToDecimal(_ingredientPrice),
+                Quantity = Convert.ToInt32(_ingredientQuantity)
+            };
         _storage.AddIngredients(ingredient);
         UpdateIngredientsView();
     }
-
 
     private async Task TakeOrder()
     {
@@ -146,6 +153,21 @@
     private void SelectRecipe(string recipe)
     {
         selectedRecipe = recipe;
+    }
+
+    private void SelectIngredient(Ingredient ingredient)
+    {
+        selectedIngredient = _storage.GetAllIngredients().FirstOrDefault(i => i.Name == ingredient.Name && i.Quantity == ingredient.Quantity);
+    }
+
+    private void DeleteSelectedIngredient()
+    {
+        if (selectedIngredient != null)
+        {
+            _storage.RemoveIngredient(selectedIngredient);
+            UpdateIngredientsView();
+            selectedIngredient = null;
+        }
     }
 
     private void UpdateRecipesView()

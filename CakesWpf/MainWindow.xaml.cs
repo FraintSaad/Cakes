@@ -46,6 +46,8 @@ namespace CakesWpf
 
         }
 
+        
+
         private async void btnTakeOrder(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(_selectedCakeName))
@@ -103,6 +105,7 @@ namespace CakesWpf
 
         private void lstIngredients_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            btnDeleteIngredient.IsEnabled = lstIngredients.SelectedItems.Count > 0;
             if (e.AddedItems.Count == 0)
             {
                 return;
@@ -140,5 +143,36 @@ namespace CakesWpf
             }
         }
 
+        public class NullToBoolConverter : IValueConverter
+        {
+            public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+            {
+                return (value != null && (int)value > 0);
+            }
+
+            public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        private void btnDeleteIngredient_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedIngredients = lstIngredients.SelectedItems.Cast<Ingredient>().ToList();
+
+            if (selectedIngredients.Any())
+            {
+                foreach (var ingredient in selectedIngredients)
+                {
+                    _storage.RemoveIngredient(ingredient);
+                }
+
+                UpdateIngredientsView();
+
+                lstIngredients.SelectedItems.Clear();
+            }
+
+            btnDeleteIngredient.IsEnabled = false;
+        }
     }
 }
