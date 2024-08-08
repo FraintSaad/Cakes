@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Resource Include="wwwroot\Images\background.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 

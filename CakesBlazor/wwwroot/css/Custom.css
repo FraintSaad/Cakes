@@ -19,6 +19,8 @@ body {
 }
 
 .tabs .nav-tabs {
+    display: flex;
+    justify-content: flex-end;
     background-color: #8b4513;
     border-radius: 5px;
     font-size: 1.25rem;
@@ -42,7 +44,13 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h4, h5 {
+h1 {
+    color: #8b4513;
+    font-size: 1.5rem;
+    border: 3px solid #d2b48c;
+    border-radius: 5px;
+}
+ h4, h5 {
     color: #8b4513; 
 }
 
