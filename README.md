@@ -7,14 +7,13 @@
 Проект прошел несколько стадий развития, каждая из которых была направлена на расширение функционала и повышение качества кода:
 
 1. **Консольное приложение (CakesAdvanced)**: Изначально проект был реализован как консольное приложение.
-   ![image](https://github.com/user-attachments/assets/c01a4340-b149-497a-ab3b-eb0672fe8543)
+  ![image](https://github.com/user-attachments/assets/5961bed6-fdd2-4145-a048-9cdad5a3f9e2)
 
 3. **Переход на WPF**: В процессе обучения я перенес проект на WPF, чтобы улучшить интерфейс и пользовательский опыт.
 4. ![image](https://github.com/user-attachments/assets/3d575382-0d7e-4a9a-97cf-cb52098b7754)
 
 5. **Blazor**: Следующим шагом стала разработка на Blazor для внедрения современного веб-интерфейса.
 6. ![image](https://github.com/user-attachments/assets/0fd717b7-3cc4-41e8-a3e6-e91f0b9d4e22)
-
 
 ## Библиотека CakesLibrary
 
