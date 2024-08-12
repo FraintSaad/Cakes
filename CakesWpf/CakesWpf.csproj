@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CakesBlazor\CakesBlazor.csproj" />
     <ProjectReference Include="..\CakesLibrary\CakesLibrary.csproj" />
   </ItemGroup>
 

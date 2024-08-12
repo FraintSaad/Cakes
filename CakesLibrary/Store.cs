@@ -2,7 +2,7 @@
 
 namespace CakesLibrary.Models
 {
-    internal class Store
+    public class Store
     {
         public string Name { get; }
         private Kitchen _kitchen;
