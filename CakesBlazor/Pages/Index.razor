@@ -60,6 +60,7 @@
                             <tbody>
                                 @foreach (var ingredient in _storage.GetAllIngredients())
                                 {
+
                                 <tr @onclick="() => SelectIngredient(ingredient)" class="@(selectedIngredient == ingredient ? "table-active" : "")">
                                     <td>@ingredient.Name</td>
                                     <td>@ingredient.Quantity</td>
