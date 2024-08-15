@@ -31,7 +31,6 @@ namespace CakesWpf
             InitializeComponent();
             _storage = new Storage();
             _kitchen = new Kitchen(_storage);
-            this.PreviewKeyDown += MainWindow_PreviewKeyDown;
             UpdateIngredientsView();
             UpdateRecipesView();
         }
@@ -125,24 +124,6 @@ namespace CakesWpf
         }
 
 
-        private void MainWindow_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Tab)
-            {
-                if (TabChanger.SelectedItem == tabClient)
-                {
-                    TabChanger.SelectedItem = tabManager;
-                }
-                else if (TabChanger.SelectedItem == tabManager)
-                {
-                    TabChanger.SelectedItem = tabClient;
-                }
-                e.Handled = true;
-                UpdateIngredientsView();
-                UpdateRecipesView();
-            }
-        }
-
         public class NullToBoolConverter : IValueConverter
         {
             public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
@@ -173,6 +154,15 @@ namespace CakesWpf
             }
 
             btnDeleteIngredient.IsEnabled = false;
+        }
+        void txtCost_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
+        }
+
+        private void txtQuantity_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
         }
     }
 }

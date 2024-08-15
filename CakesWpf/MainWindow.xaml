@@ -38,7 +38,7 @@
             <TabControl.FocusVisualStyle>
                 <Style />
             </TabControl.FocusVisualStyle>
-            <TabItem Header="Лавка" x:Name="tabClient" MouseLeftButtonDown="selection_changed_MouseLeftButtonDown" Background="Pink" >
+            <TabItem Header="Лавка" x:Name="tabClient" MouseLeftButtonDown="selection_changed_MouseLeftButtonDown" Background="Pink" FontSize="15">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="Images/cake.jpg"/>
@@ -83,7 +83,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Склад" Name="tabManager" Background="Pink">
+            <TabItem Header="Склад" Name="tabManager" Background="Pink" FontSize="15">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="Images/cake.jpg"/>
@@ -126,11 +126,11 @@
                     </ListView>
                     <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
                         <Label Content="Название:" VerticalAlignment="Center" Margin="5"/>
-                        <TextBox x:Name="txtName" Width="150" Margin="5"/>
+                        <TextBox x:Name="txtName" Width="150" Height="20" Margin="5"/>
                         <Label Content="Стоимость:" VerticalAlignment="Center" Margin="5"/>
-                        <TextBox x:Name="txtCost" Width="60" Margin="5"/>
+                        <TextBox x:Name="txtCost" Width="60" Margin="5" Height="20" PreviewTextInput="txtCost_PreviewTextInput"/>
                         <Label Content="Количество:" VerticalAlignment="Center" Margin="5"/>
-                        <TextBox x:Name="txtQuantity" Width="60" Margin="5"/>
+                        <TextBox x:Name="txtQuantity" Width="60" Margin="5" Height="20" PreviewTextInput="txtQuantity_PreviewTextInput"/>
                         <Button x:Name="btnAddIngredient" Content="Добавить" Click="BtnAddIngredient_Click" Style="{StaticResource CustomButtonStyle}" Margin="5"/>
                         <Button x:Name="btnDeleteIngredient" Content="Удалить" Click="btnDeleteIngredient_Click"  Style="{StaticResource CustomButtonStyle}" IsEnabled="False" Margin="10"/>
                     </StackPanel>
